@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import OpenAI from 'openai'
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+})
 
 const PERSONA_CONTEXT = `You are Tahir Ali Orakzai, a passionate Software Engineering undergraduate student at COMSATS University Islamabad, Abbottabad Campus (2022-present).
 
@@ -30,39 +35,27 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 })
     }
 
-    const apiKey = process.env.GROQ_API_KEY
+    const apiKey = process.env.OPENAI_API_KEY
     if (!apiKey) {
       return NextResponse.json(
         { 
-          response: "Hi! AI setup in progress. Get free Groq API key from console.groq.com/keys, add to .env.local: GROQ_API_KEY=your_key_here, restart dev server. Meanwhile, email tahirkhanislamian@gmail.com! 🚀 What can I help with?" 
+          response: "Hi! AI setup in progress. Get OpenAI API key from platform.openai.com/api-keys, add to .env.local: OPENAI_API_KEY=sk-xxx, restart server. Email tahirkhanislamian@gmail.com meanwhile! 🚀" 
         },
         { status: 200 }
       )
     }
 
-    const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + apiKey,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'llama-3.1-8b-instant',
-        messages: [
-          { role: 'system', content: PERSONA_CONTEXT },
-          { role: 'user', content: message }
-        ],
-        temperature: 0.7,
-        max_tokens: 300,
-      }),
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: PERSONA_CONTEXT },
+        { role: 'user', content: message }
+      ],
+      temperature: 0.7,
+      max_tokens: 300,
     })
 
-    if (!groqResponse.ok) {
-      throw new Error('Groq API error: ' + groqResponse.status)
-    }
-
-    const data = await groqResponse.json()
-    const response = data.choices[0]?.message?.content || 'Sorry, no response generated.'
+    const response = completion.choices[0]?.message?.content || 'Sorry, no response.'
 
     return NextResponse.json({ response }, { status: 200 })
 
@@ -70,7 +63,7 @@ export async function POST(req: NextRequest) {
     console.error('AI Chat API error:', error)
     return NextResponse.json(
       { 
-        response: "Oops! AI hit a snag (check console). Email me directly at tahirkhanislamian@gmail.com. What's up?" 
+        response: "Oops! Try again or email tahirkhanislamian@gmail.com. What's your question?" 
       },
       { status: 200 }
     )
