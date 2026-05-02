@@ -22,9 +22,9 @@ export default function Footer() {
           {/* Social links */}
           <div className="flex items-center gap-3">
             {[
-              { icon: Github, href: 'https://github.com/tahir-ali-orakzai', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/tahir-ali-orakzai', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:tahirali@example.com', label: 'Email' },
+{ icon: Github, href: 'https://github.com/Hussain-Ali-110', label: 'GitHub' },
+{ icon: Linkedin, href: 'https://www.linkedin.com/in/i-tahir-ali', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:tahirkhanislamian@gmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

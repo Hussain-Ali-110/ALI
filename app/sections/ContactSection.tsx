@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Send, Github, Linkedin, Mail, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Send, Github, Linkedin, Mail, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -40,10 +40,11 @@ export default function ContactSection() {
     }
   }
 
-  const socials = [
-    { icon: Github, label: 'GitHub', value: 'github.com/tahir-ali-orakzai', href: 'https://github.com/tahir-ali-orakzai' },
-    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/tahir-ali-orakzai', href: 'https://linkedin.com/in/tahir-ali-orakzai' },
-    { icon: Mail, label: 'Email', value: 'tahirali@example.com', href: 'mailto:tahirali@example.com' },
+const socials = [
+{ icon: Github, label: 'GitHub', value: 'github.com/Hussain-Ali-110', href: 'https://github.com/Hussain-Ali-110' },
+{ icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/i-tahir-ali', href: 'https://www.linkedin.com/in/i-tahir-ali' },
+    { icon: Mail, label: 'Email', value: 'tahirkhanislamian@gmail.com', href: 'mailto:tahirkhanislamian@gmail.com' },
+{ icon: Phone, label: 'Phone', value: '03068024962', href: 'tel:03068024962' },
   ]
 
   return (

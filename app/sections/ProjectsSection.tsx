@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { ExternalLink, Github, Star } from 'lucide-react'
 
-const projectFilters = ['All', 'Web', 'Mobile','GAME', 'AI/ML']
+import Image from 'next/image'
+
+const projectFilters = ['All', 'Web', 'Mobile', 'Game Development', 'Tools', 'AI/ML']
 
 const projects = [
   
@@ -16,8 +18,9 @@ const projects = [
     category: 'Web',
     stars: 8,
     demo: '#',
-    github: 'https://github.com/tahir-ali-orakzai/bmi-calculator',
+github: 'https://github.com/Hussain-Ali-110/bmi-calculator',
     color: '#0EA5E9',
+    image: '/bmi.png',
     featured: false,
   },
   {
@@ -28,11 +31,12 @@ const projects = [
     category: 'Tools',
     stars: 15,
     demo: '#',
-    github: 'https://github.com/tahir-ali-orakzai/shop-management',
+github: 'https://github.com/Hussain-Ali-110/shop-management',
     color: '#A78BFA',
+    image: '/shop.PNG',
     featured: true,
   },
-   {
+{
   id: 4,
   title: 'Shadow Reclaim (First Person Shooter)',
   description: 'A story-driven First Person Shooter (FPS) game featuring immersive gameplay, mission-based progression, and dynamic combat mechanics. The game includes multiple levels, enemy AI, weapon systems, and an engaging narrative experience.',
@@ -40,10 +44,11 @@ const projects = [
   category: 'Game Development',
   stars: 10,
   demo: '#',
-  github: 'https://github.com/tahir-ali-orakzai/shadow-reclaim',
+github: 'https://github.com/Hussain-Ali-110/shadow-reclaim',
   color: '#24b806',
+  image: '/game pict.png',
   featured: true,
-},
+}, 
   {
     id: 5,
     title: 'Flutter Notes App',
@@ -52,8 +57,9 @@ const projects = [
     category: 'Mobile',
     stars: 6,
     demo: '#',
-    github: 'https://github.com/tahir-ali-orakzai/flutter-notes',
+github: 'https://github.com/Hussain-Ali-110/flutter-notes',
     color: '#EC4899',
+    image: null,
     featured: false,
   },
  
@@ -130,20 +136,31 @@ export default function ProjectsSection() {
                   </div>
                 )}
 
-                {/* Thumbnail placeholder */}
+{/* Thumbnail placeholder */}
                 <div
                   className="h-36 flex items-center justify-center relative overflow-hidden"
                   style={{ background: `${project.color}08` }}
                 >
-                  <div className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage: `linear-gradient(45deg, ${project.color}22 25%, transparent 25%, transparent 75%, ${project.color}22 75%)`,
-                      backgroundSize: '20px 20px',
-                    }}
-                  />
-                  <span className="font-code text-5xl font-bold opacity-20" style={{ color: project.color }}>
-                    {project.title[0]}
-                  </span>
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 opacity-10"
+                        style={{
+                          backgroundImage: `linear-gradient(45deg, ${project.color}22 25%, transparent 25%, transparent 75%, ${project.color}22 75%)`,
+                          backgroundSize: '20px 20px',
+                        }}
+                      />
+                      <span className="font-code text-5xl font-bold opacity-20" style={{ color: project.color }}>
+                        {project.title[0]}
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 {/* Content */}
@@ -210,7 +227,7 @@ export default function ProjectsSection() {
           className="text-center mt-10"
         >
           <a
-            href="https://github.com/tahir-ali-orakzai"
+href="https://github.com/Hussain-Ali-110"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-[#30363D] text-[#8B949E] rounded-xl hover:border-[#00D8A4] hover:text-[#00D8A4] transition-all text-sm font-medium"

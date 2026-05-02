@@ -135,9 +135,9 @@ export default function HeroSection() {
             >
               <span className="text-[#8B949E] text-sm">Find me on:</span>
               {[
-                { icon: Github, href: 'https://github.com/tahir-ali-orakzai', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://linkedin.com/in/tahir-ali-orakzai', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:tahir@example.com', label: 'Email' },
+{ icon: Github, href: 'https://github.com/Hussain-Ali-110', label: 'GitHub' },
+{ icon: Linkedin, href: 'https://www.linkedin.com/in/i-tahir-ali', label: 'LinkedIn' },
+                { icon: Mail, href: 'mailto:tahirkhanislamian@gmail.com', label: 'Email' },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
