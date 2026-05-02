@@ -37,6 +37,7 @@ const experiences = [
   period: '2024',
   description: 'Completed internship in Mobile Application Development focusing on Flutter and Dart. Built responsive mobile apps, learned UI/UX principles, API integration, and state management techniques.',
   tags: ['Flutter', 'Dart', 'Mobile Apps', 'UI/UX'],
+  imageUrl: '/nutech.PNG',
   color: '#F97316',
 },
 {
@@ -47,6 +48,7 @@ const experiences = [
   period: '2024',
   description: 'Worked as a Software Development Intern, gaining hands-on experience in real-world projects. Improved skills in frontend development, debugging, teamwork, and project workflows.',
   tags: ['Frontend', 'Debugging', 'Teamwork', 'Projects'],
+  imageUrl: '/hifah.PNG',
   color: '#EF4444',
 },
  
