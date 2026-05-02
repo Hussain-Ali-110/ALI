@@ -10,6 +10,7 @@ import ExperienceSection from './sections/ExperienceSection'
 import ContactSection from './sections/ContactSection'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import AIChat from './components/AIChat'
 
 export default function Home() {
   useEffect(() => {
@@ -35,6 +36,8 @@ export default function Home() {
       <ContactSection />
       <Footer />
       <ScrollToTop />
+      <AIChat />
     </main>
   )
 }
+

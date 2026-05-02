@@ -54,13 +54,38 @@ const experiences = [
  
 ]
 
-const certifications = [
-  { name: 'Responsive Web Design', provider: 'freeCodeCamp', year: '2023' },
-  { name: 'JavaScript Algorithms', provider: 'freeCodeCamp', year: '2023' },
-  { name: 'React - The Complete Guide', provider: 'Udemy', year: '2024' },
-  { name: 'Next.js 14 & Beyond', provider: 'Udemy', year: '2024' },
-]
-
+ const certifications = [
+  { 
+    name: 'Mobile Application Development (Flutter)', 
+    provider: 'NAVTTC — NUTECH Islamabad', 
+    year: '2025' 
+  },
+  { 
+    name: 'Web Development', 
+    provider: 'Microsoft (via NAVTTC Program)', 
+    year: '2024' 
+  },
+  { 
+    name: 'Networking Fundamentals', 
+    provider: 'SESCO', 
+    year: '2024' 
+  },
+  { 
+    name: 'Freelancing', 
+    provider: 'DigiSkills.pk', 
+    year: '2023' 
+  },
+  { 
+    name: 'Graphic Design', 
+    provider: 'DigiSkills.pk', 
+    year: '2023' 
+  },
+  { 
+    name: 'Mobile App Development Internship Certificate', 
+    provider: 'Hifah Tech Abbottabad', 
+    year: '2026' 
+  }
+];
 export default function ExperienceSection() {
   return (
     <section id="experience" className="py-24 relative bg-[#161B22]/30">
@@ -176,12 +201,7 @@ export default function ExperienceSection() {
                 ))}
               </div>
 
-              {/* Open source */}
-              <div className="mt-6 p-4 rounded-xl bg-gradient-to-br from-[#00D8A4]/5 to-transparent border border-[#00D8A4]/20">
-                <p className="text-xs font-code text-[#00D8A4] mb-1">// open to</p>
-                <p className="text-white text-sm font-semibold">Internships & Freelance</p>
-                <p className="text-[#8B949E] text-xs mt-1">Remote or On-site — Abbottabad & beyond</p>
-              </div>
+              
             </motion.div>
           </div>
         </div>
