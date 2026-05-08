@@ -97,7 +97,7 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="font-code text-[#00D8A4] text-sm mb-2">04. experience</p>
+          <p className="font-code text-[#00D8A4] text-sm mb-2">Experience</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white section-title mb-4">My Journey</h2>
           <p className="text-[#8B949E] max-w-xl">
             Education, achievements, and milestones on my path to becoming a great software engineer.

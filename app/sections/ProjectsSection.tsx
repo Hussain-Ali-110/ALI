@@ -79,7 +79,7 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <p className="font-code text-[#00D8A4] text-sm mb-2">03. projects</p>
+          <p className="font-code text-[#00D8A4] text-sm mb-2">projects</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white section-title mb-4">Things I&apos;ve Built</h2>
           <p className="text-[#8B949E] max-w-xl">
             A collection of projects that showcase my skills and passion for building real-world software.

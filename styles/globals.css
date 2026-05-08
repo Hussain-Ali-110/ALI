@@ -5,25 +5,40 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   --font-space: 'Space Grotesk', sans-serif;
   --font-jetbrains: 'JetBrains Mono', monospace;
   --accent: #00D8A4;
   --accent-dark: #00B389;
+
+  --bg-primary: #F7FAFC;
+  --bg-card: #FFFFFF;
+  --border: #E5E7EB;
+  --text-primary: #0F172A;
+  --text-muted: #475569;
+}
+
+html.dark {
+  color-scheme: dark;
   --bg-primary: #0D1117;
   --bg-card: #161B22;
   --border: #30363D;
+  --text-primary: #E6EDF3;
+  --text-muted: #8B949E;
 }
+
 
 * {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0D1117;
-  color: #E6EDF3;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-space);
   overflow-x: hidden;
 }
+
 
 /* Scrollbar */
 ::-webkit-scrollbar {

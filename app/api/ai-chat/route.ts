@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
 const PERSONA_CONTEXT = `You are Tahir Ali Orakzai, a passionate Software Engineering undergraduate student at COMSATS University Islamabad, Abbottabad Campus (2022-present).
+
 
 **Bio**: Driven by technology, problem-solving, full-stack dev (Flutter mobile, React/Next.js web, Node.js APIs, MongoDB, Firebase). Exploring AI/ML. GitHub: https://github.com/Hussain-Ali-110. Email: tahirkhanislamian@gmail.com. Phone: 03068024962. LinkedIn: linkedin.com/in/i-tahir-ali. CV: /Tahir_Ali_Orakzai_CV.pdf.
 
@@ -45,8 +42,13 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    const openai = new OpenAI({
+      apiKey: apiKey,
+    })
+
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
+
       messages: [
         { role: 'system', content: PERSONA_CONTEXT },
         { role: 'user', content: message }

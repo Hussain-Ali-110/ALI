@@ -105,11 +105,11 @@ const socials = [
 
             {/* Quote */}
             <div className="p-4 rounded-xl border border-[#30363D] bg-[#161B22]">
-              <p className="font-code text-xs text-[#8B949E] mb-2">// favorite quote</p>
+              <p className="font-code text-xs text-[#8B949E] mb-2">Favorite quote</p>
               <p className="text-[#E6EDF3] text-sm italic">
                 &ldquo;First, solve the problem. Then, write the code.&rdquo;
               </p>
-              <p className="text-xs text-[#8B949E] mt-1">— John Johnson</p>
+              <p className="text-xs text-[#8B949E] mt-1">John Johnson</p>
             </div>
           </motion.div>
 

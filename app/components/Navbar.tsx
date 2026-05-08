@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Code2 } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -68,6 +69,7 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
+            <ThemeToggle />
             {navLinks.map((link) => (
               <button
                 key={link.label}
@@ -129,6 +131,9 @@ export default function Navbar() {
                   {link.label}
                 </motion.button>
               ))}
+              <div className="px-4 py-2">
+                <ThemeToggle />
+              </div>
               <a
                 href="/Tahir_Ali_Orakzai_CV.pdf"
                 download
